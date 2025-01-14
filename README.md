@@ -1,5 +1,7 @@
 # AI-research-writer-streamlit-agent
 AI Research Assistant Chat agent
+- search for articles
+- Write a full article on the search articles
 
 ## Step to run
 
@@ -7,7 +9,8 @@ AI Research Assistant Chat agent
 Go to path
 ```
 
+Run the python script
 ```sh
-run streamlit run
+run streamlit run search-write-agent.py
 ```
 
