@@ -3,7 +3,11 @@ AI Research Assistant Chat agent
 
 ## Step to run
 
-bash
+```sh
 Go to path
+```
 
+```sh
+run streamlit run
+```
 
