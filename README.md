@@ -3,7 +3,7 @@ AI Research Assistant Chat agent
 
 ## Step to run
 
-'''bash
+bash
 Go to path
-'''
+
 
