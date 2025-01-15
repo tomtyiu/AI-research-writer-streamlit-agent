@@ -5,3 +5,4 @@ langchain-community
 langgraph 
 transformers 
 torch
+langchain_openai
