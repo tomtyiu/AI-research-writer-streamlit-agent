@@ -49,6 +49,21 @@ if not api_key and not os.environ.get("OPENAI_API_KEY"):
     st.sidebar.warning("Please enter your OpenAI API key to proceed.")
     st.stop()
 
+# API Key Input
+api_key2 = st.sidebar.text_input(
+    "Enter your Tavily API Key:",
+    type="password",
+    help="Your API key is used to authenticate with OpenAI's services.",
+)
+
+if not api_key2 and not os.environ.get("TAVILY_API_KEY"):
+    st.sidebar.warning("Please enter your Tavily API key to proceed.")
+    st.stop()
+else:
+    # If the user provided the key, set the environment variable
+    if api_key2:
+        os.environ["TAVILY_API_KEY"] = api_key2
+        
 # Sidebar for Configuration Parameters
 st.sidebar.header("Parameters")
 
@@ -111,7 +126,13 @@ def initialize_agents(api_key, max_results):
     model = ChatOpenAI(model="gpt-4", api_key=api_key)  # Corrected model name and passed API key
 
     # Initialize search tool with user-configurable parameters
-    search = TavilySearchResults(max_results=max_results)  # Now configurable
+    # Initialize search tool with user-configurable parameters
+    search = TavilySearchResults(
+        tavily_api_key=api_key2,   # <--- add this line
+        max_results=max_results,
+        search_depth="advanced",
+        include_raw_content=True
+    )
     tools = [search]
 
     # Create agents with the respective system prompts
