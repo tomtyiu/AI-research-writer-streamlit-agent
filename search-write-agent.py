@@ -22,14 +22,14 @@ logger = logging.getLogger(__name__)
 
 # Set the page configuration
 st.set_page_config(
-    page_title="🤖 AI Research Assistant Chat",
+    page_title="AI Research Assistant Chat",
     page_icon="🤖",
     layout="wide",
     initial_sidebar_state="expanded",
 )
 
 # Title of the app
-st.title("🤖 AI Research Assistant Chat")
+st.title("AI Research Assistant Chat")
 
 # Sidebar for configuration and example queries
 st.sidebar.header("Configuration")
@@ -276,7 +276,7 @@ def submit():
             st.session_state.messages.append({"role": "assistant_writer", "content": msg})
 
     # Clear the input box
-    st.session_state.user_query = ""
+    # st.session_state.user_query = ""
 
     # Refresh the chat display
     display_chat()
